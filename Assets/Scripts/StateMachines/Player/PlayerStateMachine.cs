@@ -1,3 +1,5 @@
+using StateMachines.Player.States;
+
 namespace StateMachines.Player
 {
     public class PlayerStateMachine : StateMachine
@@ -5,13 +7,7 @@ namespace StateMachines.Player
         // Start is called before the first frame update
         void Start()
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            SwitchState(new PlayerTestState(this));
         }
     }
 }
