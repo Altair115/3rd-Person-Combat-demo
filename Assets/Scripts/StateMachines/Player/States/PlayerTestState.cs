@@ -4,7 +4,7 @@ namespace StateMachines.Player.States
 {
     public class PlayerTestState : PlayerBaseState
     {
-        private float _timer = 5f;
+        private float _timer;
         
         public PlayerTestState(PlayerStateMachine stateMachine) : base(stateMachine)
         {
@@ -12,21 +12,27 @@ namespace StateMachines.Player.States
 
         public override void Enter()
         {
+            _stateMachine.InputReader.OnJumpEvent += OnJump;
             Debug.Log("Enter");
         }
 
         public override void Tick(float deltaTime)
         {
-            _timer -= deltaTime;
-            Debug.Log(_timer);
+            _timer += deltaTime;
             
-            if(_timer <= 0f)
-                _stateMachine.SwitchState(new PlayerTestState(_stateMachine));
+            Debug.Log(_timer);
         }
 
         public override void Exit()
         {
+            _stateMachine.InputReader.OnJumpEvent -= OnJump;
             Debug.Log("Exit");
+        }
+
+
+        private void OnJump()
+        {
+            _stateMachine.SwitchState(new PlayerTestState(_stateMachine));
         }
     }
 }
