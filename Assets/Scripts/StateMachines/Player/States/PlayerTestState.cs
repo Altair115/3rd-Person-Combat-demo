@@ -4,35 +4,26 @@ namespace StateMachines.Player.States
 {
     public class PlayerTestState : PlayerBaseState
     {
-        private float _timer;
-        
         public PlayerTestState(PlayerStateMachine stateMachine) : base(stateMachine)
         {
         }
 
         public override void Enter()
         {
-            _stateMachine.InputReader.OnJumpEvent += OnJump;
-            Debug.Log("Enter");
+            
         }
 
         public override void Tick(float deltaTime)
         {
-            _timer += deltaTime;
-            
-            Debug.Log(_timer);
+            Vector3 movement = new Vector3();
+            movement.x = _stateMachine.InputReader.MovementValue.x;
+            movement.y = 0;
+            movement.z = _stateMachine.InputReader.MovementValue.y;
+            _stateMachine.transform.Translate(movement * deltaTime);
         }
 
         public override void Exit()
         {
-            _stateMachine.InputReader.OnJumpEvent -= OnJump;
-            Debug.Log("Exit");
-        }
-
-
-        private void OnJump()
-        {
-            _stateMachine.SwitchState(new PlayerTestState(_stateMachine));
         }
     }
 }
