@@ -15,10 +15,8 @@ namespace StateMachines.Player.States
 
         public override void Tick(float deltaTime)
         {
-            Vector3 movement = new Vector3();
-            movement.x = _stateMachine.InputReader.MovementValue.x;
-            movement.y = 0;
-            movement.z = _stateMachine.InputReader.MovementValue.y;
+            Vector3 movement = CalculateMovement();
+            
             _stateMachine.Controller.Move(movement * (_stateMachine.OutOfCombatSpeed * deltaTime));
 
             if (_stateMachine.InputReader.MovementValue == Vector2.zero)
@@ -32,6 +30,21 @@ namespace StateMachines.Player.States
 
         public override void Exit()
         {
+            
+        }
+
+        public Vector3 CalculateMovement()
+        {
+            Vector3 forward = _stateMachine.MainCameraTransform.forward;
+            Vector3 right = _stateMachine.MainCameraTransform.right;
+
+            forward.y = 0;
+            right.y = 0;
+
+            forward.Normalize();
+            right.Normalize();
+
+            return forward * _stateMachine.InputReader.MovementValue.y + right * _stateMachine.InputReader.MovementValue.x;
         }
     }
 }
