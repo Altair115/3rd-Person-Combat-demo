@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace StateMachines.Player.States
 {
     public class PlayerTargetingState : PlayerBaseState
@@ -13,7 +15,7 @@ namespace StateMachines.Player.States
 
         public override void Tick(float deltaTime)
         {
-            
+            Debug.Log(_stateMachine.Targeter.CurrentTarget.name);
         }
 
         public override void Exit()
@@ -24,6 +26,8 @@ namespace StateMachines.Player.States
         private void OnCancel()
         {
             if (_stateMachine.CurrentState != this) {return; }
+            
+            _stateMachine.Targeter.Cancel();
             _stateMachine.SwitchState(new PlayerFreeLookState(_stateMachine));
         }
     }
