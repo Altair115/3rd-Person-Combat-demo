@@ -6,7 +6,9 @@ namespace StateMachines.Player.States
 {
     public class PlayerFreeLookState : PlayerBaseState
     {
+        private readonly int freeLookBlendTreedHash = Animator.StringToHash("FreeLookBlendTree");
         private readonly int freeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+        
         private const float _animatorDampTime = 0.1f;
         
         public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -16,6 +18,7 @@ namespace StateMachines.Player.States
         public override void Enter()
         {
             _stateMachine.InputReader.TargetEvent += OnTarget;
+            _stateMachine.Animator.Play(freeLookBlendTreedHash);
         }
         
         public override void Tick(float deltaTime)
