@@ -12,6 +12,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public event Action OnJumpEvent;
     public event Action OnDodgeEvent;
+    public event Action TargetEvent;
+    public event Action CancelEvent;
     
     private void Start()
     {
@@ -44,6 +46,18 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        
+        //Only Needed to drive the camera
+    }
+
+    public void OnLockOn(InputAction.CallbackContext context)
+    {
+        if(!context.performed) {return;}
+        TargetEvent?.Invoke();
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if(!context.performed) {return;}
+        CancelEvent?.Invoke();
     }
 }

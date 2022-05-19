@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Networking.PlayerConnection;
 
 namespace StateMachines.Player.States
 {
@@ -13,9 +15,9 @@ namespace StateMachines.Player.States
 
         public override void Enter()
         {
-            
+            _stateMachine.InputReader.TargetEvent += OnTarget;
         }
-
+        
         public override void Tick(float deltaTime)
         {
             Vector3 movement = CalculateMovement();
@@ -33,8 +35,14 @@ namespace StateMachines.Player.States
         
         public override void Exit()
         {
-            
+            _stateMachine.InputReader.TargetEvent -= OnTarget;
         }
+        
+        private void OnTarget()
+        {
+            _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+        }
+
 
         private Vector3 CalculateMovement()
         {
