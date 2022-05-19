@@ -5,6 +5,8 @@ namespace StateMachines.Player.States
     public class PlayerTargetingState : PlayerBaseState
     {
         private readonly int targetingBlendTreedHash = Animator.StringToHash("TargetingBlendTree");
+        private readonly int targetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
+        private readonly int targetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
         public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
         {
         }
@@ -25,10 +27,12 @@ namespace StateMachines.Player.States
 
             Vector3 movement = CalculateMovement();
             Move(movement * _stateMachine.TargetingMovementSpeed, deltaTime);
+
+            UpdateAnimator(deltaTime);
             
             FaceTarget();
         }
-
+        
         public override void Exit()
         {
             _stateMachine.InputReader.TargetEvent -= OnCancel;
@@ -50,6 +54,12 @@ namespace StateMachines.Player.States
             movement += _stateMachine.transform.forward * _stateMachine.InputReader.MovementValue.y;
             
             return movement;
+        }
+        
+        private void UpdateAnimator(float deltaTime)
+        {
+            _stateMachine.Animator.SetFloat(targetingForwardSpeedHash, _stateMachine.InputReader.MovementValue.y, 0.1f, deltaTime);
+            _stateMachine.Animator.SetFloat(targetingRightSpeedHash, _stateMachine.InputReader.MovementValue.x, 0.1f, deltaTime);
         }
     }
 }
