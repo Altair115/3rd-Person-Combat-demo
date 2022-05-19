@@ -10,6 +10,7 @@ namespace StateMachines.Player
         [field: SerializeField]public CharacterController Controller { get; private set; }
         [field: SerializeField]public Animator Animator { get; private set; }
         [field: SerializeField]public Targeter Targeter { get; private set; }
+        [field: SerializeField]public ForceReciever ForceReciever { get; private set; }
         [field: SerializeField]public float FreeLookMovementSpeed { get; private set; }
         [field: SerializeField]public float RotationDampingValue { get; private set; }
         public Transform MainCameraTransform { get; private set; }
