@@ -19,6 +19,12 @@ namespace StateMachines.Player.States
 
         public override void Tick(float deltaTime)
         {
+            if (_stateMachine.InputReader.IsAttacking)
+            {
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine));
+                return;
+            }
+            
             if (_stateMachine.Targeter.CurrentTarget == null)
             {
                 _stateMachine.SwitchState(new PlayerFreeLookState(_stateMachine));

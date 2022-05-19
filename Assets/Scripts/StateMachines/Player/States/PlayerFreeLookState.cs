@@ -23,6 +23,12 @@ namespace StateMachines.Player.States
         
         public override void Tick(float deltaTime)
         {
+            if (_stateMachine.InputReader.IsAttacking)
+            {
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine));
+                return;
+            }
+            
             Vector3 movement = CalculateMovement();
             
             Move(movement * _stateMachine.FreeLookMovementSpeed, deltaTime);
