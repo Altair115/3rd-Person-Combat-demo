@@ -8,6 +8,7 @@ namespace Combat
     {
         [SerializeField] private Collider myCollider;
 
+        private int _damage;
         private List<Collider> alreadyCollidedWith = new List<Collider>();
 
         private void OnEnable()
@@ -23,8 +24,13 @@ namespace Combat
 
             if (other.TryGetComponent<Health>(out Health health))
             {
-                health.DealDamage(10);
+                health.DealDamage(_damage);
             }
+        }
+
+        public void SetAttack(int damage)
+        {
+            _damage = damage;
         }
     }
 }

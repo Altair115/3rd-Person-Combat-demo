@@ -15,6 +15,7 @@ namespace StateMachines.Player.States
 
         public override void Enter()
         {
+            _stateMachine.Weapon.SetAttack(_attack.DamageAmount);
             _stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
         }
 
