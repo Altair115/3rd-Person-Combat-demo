@@ -5,6 +5,7 @@ namespace StateMachines.Player.States
     public class PlayerAttackingState : PlayerBaseState
     {
         private float _previousFrameTime;
+        private bool _alreadyAppliedForce;
         private Attack _attack;
     
         public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
@@ -24,8 +25,13 @@ namespace StateMachines.Player.States
             
             float normalizedTime = GetNormalizedTime();
 
-            if (normalizedTime > _previousFrameTime && normalizedTime < 1f)
+            if (normalizedTime >= _previousFrameTime && normalizedTime < 1f)
             {
+                if (normalizedTime >= _attack.ForceTime)
+                {
+                    TryApplyForce();
+                }
+                
                 if (_stateMachine.InputReader.IsAttacking)
                 {
                     TryComboAttack(normalizedTime);
@@ -33,7 +39,14 @@ namespace StateMachines.Player.States
             }
             else
             {
-                //go back to locomotion
+                if (_stateMachine.Targeter.CurrentTarget != null)
+                {
+                    _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+                }
+                else
+                {
+                    _stateMachine.SwitchState(new PlayerFreeLookState(_stateMachine));
+                }
             }
             _previousFrameTime = normalizedTime;
         }
@@ -48,6 +61,13 @@ namespace StateMachines.Player.States
             if(_attack.ComboStateIndex == -1){return;}
             if(normalizedTime < _attack.ComboAttackTime){return;}
             _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, _attack.ComboStateIndex));
+        }
+
+        private void TryApplyForce()
+        {
+            if(_alreadyAppliedForce){return;}
+            _stateMachine.ForceReciever.AddForce(_stateMachine.transform.forward * _attack.Force);
+            _alreadyAppliedForce = true;
         }
 
         private float GetNormalizedTime()

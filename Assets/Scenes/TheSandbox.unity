@@ -1240,16 +1240,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.071022
       objectReference: {fileID: 0}
-    - target: {fileID: 5270527242259323602, guid: 095ba62b7fa4d0442b176c2160263540,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[0].<TransitionDuration>k__BackingField
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270527242259323602, guid: 095ba62b7fa4d0442b176c2160263540,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[1].<TransitionDuration>k__BackingField
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 6276994044608054176, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1428,12 +1418,12 @@ PrefabInstance:
     - target: {fileID: 8998085240256654110, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00066959404
+      value: 0.00066962844
       objectReference: {fileID: 0}
     - target: {fileID: 8998085240256654110, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000036970392
+      value: -0.00003697229
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
