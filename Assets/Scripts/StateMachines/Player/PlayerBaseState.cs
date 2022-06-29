@@ -14,11 +14,16 @@ public abstract class PlayerBaseState : State
         _stateMachine = stateMachine;
     }
 
+    protected void Move(float deltaTime)
+    {
+        Move(Vector3.zero, deltaTime);
+    }
+
     protected void Move(Vector3 motion, float deltaTime)
     {
         _stateMachine.Controller.Move((motion + _stateMachine.ForceReciever.Movement) * deltaTime);
     }
-
+    
     protected void FaceTarget()
     {
         if (_stateMachine.Targeter.CurrentTarget == null) { return; }
