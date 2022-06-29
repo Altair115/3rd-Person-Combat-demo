@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class WeaponHandler : MonoBehaviour
 {
-    [SerializeField] private Collider bladeCollider;
+    [SerializeField] private GameObject blade;
 
+    /// <summary>
+    /// Animator event
+    /// </summary>
     public void EnableWeapon()
     {
-        bladeCollider.enabled = true;
+        blade.SetActive(true);
     }
+    /// <summary>
+    /// Animator event
+    /// </summary>
     public void DisableWeapon()
     {
-        bladeCollider.enabled = false;
+        blade.SetActive(false);
     }
 }
