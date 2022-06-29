@@ -14,6 +14,7 @@ namespace StateMachines.Player
         [field: SerializeField]public float FreeLookMovementSpeed { get; private set; }
         [field: SerializeField]public float TargetingMovementSpeed { get; private set; }
         [field: SerializeField]public float RotationDampingValue { get; private set; }
+        [field: SerializeField]public Attack[] Attacks { get; private set; }
         public Transform MainCameraTransform { get; private set; }
 
         private void Start()

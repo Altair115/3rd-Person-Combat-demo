@@ -173,6 +173,10 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 5
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDampingValue>k__BackingField: 10
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: Slash 1
+  - <AnimationName>k__BackingField: Slash 2
+  - <AnimationName>k__BackingField: Slash 3
 --- !u!114 &5652892360571016348
 MonoBehaviour:
   m_ObjectHideFlags: 0

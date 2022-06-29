@@ -21,7 +21,7 @@ namespace StateMachines.Player.States
         {
             if (_stateMachine.InputReader.IsAttacking)
             {
-                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine));
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, 0));
                 return;
             }
             
