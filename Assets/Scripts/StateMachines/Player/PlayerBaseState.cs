@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using StateMachines;
 using StateMachines.Player;
-using Unity.Mathematics;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
