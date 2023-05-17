@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
+using UnityEngine.Networking.PlayerConnection;
 
 namespace StateMachines.Player.States
 {
     public class PlayerFreeLookState : PlayerBaseState
     {
+        private readonly int freeLookBlendTreedHash = Animator.StringToHash("FreeLookBlendTree");
         private readonly int freeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+        
         private const float _animatorDampTime = 0.1f;
+        private const float _animatorCrossFadeDuration = 0.1f;
         
         public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
         {
@@ -13,14 +18,21 @@ namespace StateMachines.Player.States
 
         public override void Enter()
         {
-            
+            _stateMachine.InputReader.TargetEvent += OnTarget;
+            _stateMachine.Animator.CrossFadeInFixedTime(freeLookBlendTreedHash, _animatorCrossFadeDuration);
         }
-
+        
         public override void Tick(float deltaTime)
         {
+            if (_stateMachine.InputReader.IsAttacking)
+            {
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, 0));
+                return;
+            }
+            
             Vector3 movement = CalculateMovement();
             
-            _stateMachine.Controller.Move(movement * (_stateMachine.FreeLookMovementSpeed * deltaTime));
+            Move(movement * _stateMachine.FreeLookMovementSpeed, deltaTime);
 
             if (_stateMachine.InputReader.MovementValue == Vector2.zero)
             {
@@ -33,8 +45,16 @@ namespace StateMachines.Player.States
         
         public override void Exit()
         {
-            
+            _stateMachine.InputReader.TargetEvent -= OnTarget;
         }
+        
+        private void OnTarget()
+        {
+            if(!_stateMachine.Targeter.SelectTarget()){return;}
+            
+            _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+        }
+
 
         private Vector3 CalculateMovement()
         {

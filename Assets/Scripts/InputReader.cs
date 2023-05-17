@@ -9,9 +9,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     private Controls _controls;
 
     public Vector2 MovementValue { get; private set; }
+    public bool IsAttacking { get; private set; }
 
     public event Action OnJumpEvent;
     public event Action OnDodgeEvent;
+    public event Action TargetEvent;
+    public event Action CancelEvent;
     
     private void Start()
     {
@@ -44,6 +47,23 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        
+        //Only Needed to drive the camera
+    }
+
+    public void OnLockOn(InputAction.CallbackContext context)
+    {
+        if(!context.performed) {return;}
+        TargetEvent?.Invoke();
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if(!context.performed) {return;}
+        CancelEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        IsAttacking = context.performed;
     }
 }
