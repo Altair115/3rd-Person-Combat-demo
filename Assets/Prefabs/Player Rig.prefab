@@ -104,8 +104,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 9125097842468825413}
+  m_Follow: {fileID: 9125097842468782235}
   m_AnimatedTarget: {fileID: 1160455549521625213}
   m_LayerIndex: 0
   m_ShowDebugText: 0
@@ -134,11 +134,89 @@ MonoBehaviour:
   m_ParentHash:
   - m_Hash: 585382737
     m_ParentHash: 756556552
-  - m_Hash: 230188126
+  - m_Hash: -2065561618
     m_ParentHash: 585382737
-  - m_Hash: 846512302
+  - m_Hash: -1564832322
+    m_ParentHash: 585382737
+  - m_Hash: -945023300
     m_ParentHash: 585382737
   - m_Hash: -479991077
+    m_ParentHash: 756556552
+  - m_Hash: -412696058
+    m_ParentHash: -479991077
+  - m_Hash: 924407829
+    m_ParentHash: -479991077
+  - m_Hash: -617398412
+    m_ParentHash: -479991077
+  - m_Hash: 995281368
+    m_ParentHash: -479991077
+  - m_Hash: 17543793
+    m_ParentHash: -479991077
+  - m_Hash: 485194881
+    m_ParentHash: -479991077
+  - m_Hash: -1511004454
+    m_ParentHash: -479991077
+  - m_Hash: -1854263371
+    m_ParentHash: -479991077
+  - m_Hash: 1836753747
+    m_ParentHash: -479991077
+  - m_Hash: -292231580
+    m_ParentHash: -479991077
+  - m_Hash: 1767503704
+    m_ParentHash: -479991077
+  - m_Hash: 556502166
+    m_ParentHash: -479991077
+  - m_Hash: -459709945
+    m_ParentHash: -479991077
+  - m_Hash: 1659181612
+    m_ParentHash: -479991077
+  - m_Hash: -450360560
+    m_ParentHash: -479991077
+  - m_Hash: -359939082
+    m_ParentHash: -479991077
+  - m_Hash: -983338400
+    m_ParentHash: -479991077
+  - m_Hash: -1270913310
+    m_ParentHash: 756556552
+  - m_Hash: 1334944030
+    m_ParentHash: -1270913310
+  - m_Hash: 806878479
+    m_ParentHash: -1270913310
+  - m_Hash: 1940467086
+    m_ParentHash: -1270913310
+  - m_Hash: -969458169
+    m_ParentHash: -1270913310
+  - m_Hash: 1556820833
+    m_ParentHash: -1270913310
+  - m_Hash: -1367560934
+    m_ParentHash: -1270913310
+  - m_Hash: -115101581
+    m_ParentHash: -1270913310
+  - m_Hash: 1043134639
+    m_ParentHash: -1270913310
+  - m_Hash: 169180750
+    m_ParentHash: -1270913310
+  - m_Hash: 294565577
+    m_ParentHash: -1270913310
+  - m_Hash: -1025112867
+    m_ParentHash: -1270913310
+  - m_Hash: 873550159
+    m_ParentHash: -1270913310
+  - m_Hash: -1973961176
+    m_ParentHash: -1270913310
+  - m_Hash: -916788823
+    m_ParentHash: -1270913310
+  - m_Hash: 439507901
+    m_ParentHash: -1270913310
+  - m_Hash: 1108543219
+    m_ParentHash: -1270913310
+  - m_Hash: 1478146620
+    m_ParentHash: -1270913310
+  - m_Hash: -637412921
+    m_ParentHash: 756556552
+  - m_Hash: 1124632701
+    m_ParentHash: 756556552
+  - m_Hash: 873445611
     m_ParentHash: 756556552
 --- !u!1 &2816334208898695158
 GameObject:
@@ -164,7 +242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816334208898695158}
-  m_LocalRotation: {x: 0.055129163, y: 0.0006696286, z: -0.0000369723, w: 0.998479}
+  m_LocalRotation: {x: 0.0026322184, y: -9.9753844e-11, z: 2.6264302e-13, w: 0.9999966}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -209,7 +287,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0519125, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -369,7 +448,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830692830054204105}
-  m_LocalRotation: {x: 0.07323395, y: 0.0006688133, z: -0.000049111728, w: 0.9973146}
+  m_LocalRotation: {x: 0.020773184, y: 1.0050588e-10, z: -2.0882454e-12, w: 0.99978423}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -414,7 +493,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0519125, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -701,7 +781,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6132681768181190990}
-  m_LocalRotation: {x: 0.19995937, y: -0, z: -0, w: 0.9798042}
+  m_LocalRotation: {x: 0.19995944, y: -0, z: -0, w: 0.9798042}
   m_LocalPosition: {x: 2.5191422, y: 0.36906338, z: -13.071022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -739,7 +819,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0519125, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -803,7 +884,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 9178065742590497051}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2469485617712063724}
   m_CommonLens: 1
   m_Lens:
@@ -815,7 +896,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0519125, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -902,6 +984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerIndex: -1
+  AutoEnableInputs: 1
   XYAxis: {fileID: -5630151704836100654, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   ZAxis: {fileID: 0}
 --- !u!114 &55110414
@@ -1098,7 +1181,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9027015549787733211}
-  m_LocalRotation: {x: 0.022034163, y: 0.00067046727, z: -0.000014776774, w: 0.999757}
+  m_LocalRotation: {x: -0.030671353, y: -8.1370215e-16, z: -2.2591762e-17, w: 0.99952954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1143,7 +1226,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0519125, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1157,7 +1241,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 8518673012382456030}
     m_Modifications:
     - target: {fileID: 1908480342214112822, guid: 76db19276b5266349991dee0218bc680,
@@ -1170,6 +1254,11 @@ PrefabInstance:
       propertyPath: cinemachineTargetGroup
       value: 
       objectReference: {fileID: 604212817074930647}
+    - target: {fileID: 3228618102243359961, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
     - target: {fileID: 7825371044200468612, guid: 76db19276b5266349991dee0218bc680,
         type: 3}
       propertyPath: m_RootOrder
@@ -1226,7 +1315,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76db19276b5266349991dee0218bc680, type: 3}
 --- !u!95 &1160455549521625213 stripped
 Animator:
@@ -1246,9 +1337,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4383303307280678052}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9178065742590497051 stripped
+--- !u!4 &9125097842468782235 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4867147683980881343, guid: 76db19276b5266349991dee0218bc680,
+  m_CorrespondingSourceObject: {fileID: 4789088948083981375, guid: 76db19276b5266349991dee0218bc680,
+    type: 3}
+  m_PrefabInstance: {fileID: 4383303307280678052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9125097842468825413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4789088948084004321, guid: 76db19276b5266349991dee0218bc680,
     type: 3}
   m_PrefabInstance: {fileID: 4383303307280678052}
   m_PrefabAsset: {fileID: 0}

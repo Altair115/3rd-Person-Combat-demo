@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using StateMachines;
-//using StateMachines.Enemy;
-
-public abstract class EnemyBaseState : State
+namespace StateMachines.Enemy
 {
-    protected EnemyStateMachine _stateMachine;
-    
-    public EnemyBaseState(EnemyStateMachine stateMachine)
+    public abstract class EnemyBaseState : State
     {
-        _stateMachine = stateMachine;
+        protected EnemyStateMachine _stateMachine;
+
+        public EnemyBaseState(EnemyStateMachine stateMachine)
+        {
+            _stateMachine = stateMachine;
+        }
     }
 }

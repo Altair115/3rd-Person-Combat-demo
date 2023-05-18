@@ -24,5 +24,23 @@ namespace StateMachines.Player
             MainCameraTransform = Camera.main.transform;
             SwitchState(new PlayerFreeLookState(this));
         }
+
+        /// <summary>
+        /// Animation event that need to be caught
+        /// Trigger by the walking animations
+        /// </summary>
+        private void FootL()
+        {
+            
+        }
+
+        /// <summary>
+        /// Animation event that need to be caught
+        /// Trigger by the walking animations
+        /// </summary>
+        private void FootR()
+        {
+            
+        }
     }
 }
