@@ -448,7 +448,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830692830054204105}
-  m_LocalRotation: {x: 0.020773184, y: 0.0000000010751667, z: -2.2339457e-11, w: 0.99978423}
+  m_LocalRotation: {x: 0.020773184, y: -0.0000000010751667, z: 2.2339457e-11, w: 0.99978423}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1181,7 +1181,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9027015549787733211}
-  m_LocalRotation: {x: -0.030671349, y: 0.000000017231846, z: 5.287727e-10, w: 0.99952954}
+  m_LocalRotation: {x: -0.030671349, y: -0.000000017231839, z: -5.2877247e-10, w: 0.99952954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1313,26 +1313,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8498349363970483830, guid: 76db19276b5266349991dee0218bc680,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[0].<AnimationName>k__BackingField
-      value: Sword-Attakc-R1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8498349363970483830, guid: 76db19276b5266349991dee0218bc680,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[1].<AnimationName>k__BackingField
-      value: Sword-Attakc-R2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8498349363970483830, guid: 76db19276b5266349991dee0218bc680,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<AnimationName>k__BackingField
-      value: Sword-Attakc-R3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8498349363970483830, guid: 76db19276b5266349991dee0218bc680,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<ComboStateIndex>k__BackingField
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -28,6 +28,8 @@ namespace StateMachines.Enemy.States
                 _stateMachine.SwitchState(new ChasingState(_stateMachine));
                 return;
             }
+            
+            FacePlayer();
             _stateMachine.Animator.SetFloat(SpeedHash, 0, AnimatorDampTime, deltaTime);
         }
 
