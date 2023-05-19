@@ -9,16 +9,18 @@ public class WeaponHandler : MonoBehaviour
     /// <summary>
     /// Animator event
     /// </summary>
-    public void EnableWeapon()
+    private void EnableWeapon()
     {
         blade.SetActive(true);
+        Debug.Log("ON");
     }
     /// <summary>
     /// Animator event
     /// </summary>
-    public void DisableWeapon()
+    private void DisableWeapon()
     {
         blade.SetActive(false);
+        Debug.Log("OFF");
     }
     
     /// <summary>

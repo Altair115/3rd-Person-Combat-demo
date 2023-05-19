@@ -13,6 +13,7 @@ namespace StateMachines.Player
         [field: SerializeField]public Targeter Targeter { get; private set; }
         [field: SerializeField]public ForceReciever ForceReciever { get; private set; }
         [field: SerializeField]public WeaponDamage Weapon { get; private set; }
+        [field: SerializeField]public Health Health { get; private set; }
         [field: SerializeField]public float FreeLookMovementSpeed { get; private set; }
         [field: SerializeField]public float TargetingMovementSpeed { get; private set; }
         [field: SerializeField]public float RotationDampingValue { get; private set; }
@@ -23,6 +24,21 @@ namespace StateMachines.Player
         {
             MainCameraTransform = Camera.main.transform;
             SwitchState(new PlayerFreeLookState(this));
+        }
+        
+        private void OnEnable()
+        {
+            Health.OnTakeDamage += HandleOnTakeDamage;
+        }
+        
+        private void OnDisable()
+        {
+            Health.OnTakeDamage -= HandleOnTakeDamage;
+        }
+        
+        private void HandleOnTakeDamage()
+        {
+            SwitchState(new PlayerImpactState(this));
         }
 
         /// <summary>

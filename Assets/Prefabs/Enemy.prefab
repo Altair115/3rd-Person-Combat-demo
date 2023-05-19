@@ -155,7 +155,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.25
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.025
@@ -234,6 +234,7 @@ MonoBehaviour:
   <ForceReciever>k__BackingField: {fileID: 1385047129811660234}
   <Agent>k__BackingField: {fileID: 3235410683562291872}
   <Weapon>k__BackingField: {fileID: 769976001930191978}
+  <Health>k__BackingField: {fileID: 5027387857344345227}
   <MovementSpeed>k__BackingField: 3
   <PlayerChasingRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5

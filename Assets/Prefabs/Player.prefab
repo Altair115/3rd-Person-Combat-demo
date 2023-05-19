@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 5652892360571016348}
   - component: {fileID: 3653111941062496989}
   - component: {fileID: 2821513330785249488}
+  - component: {fileID: 2302345002840444489}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -154,13 +155,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.7
-  m_Radius: 0.2
+  m_Height: 1.9
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!95 &3228618102243359961
 Animator:
   serializedVersion: 5
@@ -200,6 +201,7 @@ MonoBehaviour:
   <Targeter>k__BackingField: {fileID: 2839770650642679379}
   <ForceReciever>k__BackingField: {fileID: 3653111941062496989}
   <Weapon>k__BackingField: {fileID: 3877504659199207439}
+  <Health>k__BackingField: {fileID: 2302345002840444489}
   <FreeLookMovementSpeed>k__BackingField: 5
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDampingValue>k__BackingField: 10
@@ -209,7 +211,7 @@ MonoBehaviour:
     <ComboStateIndex>k__BackingField: 1
     <ComboAttackTime>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.35
-    <Force>k__BackingField: 7.5
+    <Force>k__BackingField: 3.75
     <DamageAmount>k__BackingField: 10
     <Knockback>k__BackingField: 10
   - <AnimationName>k__BackingField: Attack 2
@@ -217,7 +219,7 @@ MonoBehaviour:
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
     <ForceTime>k__BackingField: 0.35
-    <Force>k__BackingField: 7.5
+    <Force>k__BackingField: 3.75
     <DamageAmount>k__BackingField: 15
     <Knockback>k__BackingField: 15
   - <AnimationName>k__BackingField: Attack 3
@@ -225,7 +227,7 @@ MonoBehaviour:
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0.3
     <ForceTime>k__BackingField: 0.35
-    <Force>k__BackingField: 10
+    <Force>k__BackingField: 5
     <DamageAmount>k__BackingField: 20
     <Knockback>k__BackingField: 20
 --- !u!114 &5652892360571016348
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4331251235848576877}
   agent: {fileID: 0}
-  drag: 0.1
+  drag: 0.3
 --- !u!114 &2821513330785249488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +270,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blade: {fileID: 5272282903499791410}
+--- !u!114 &2302345002840444489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908480342214112822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9a7d80202bc0640af76302879e79e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &4017073153682069134
 GameObject:
   m_ObjectHideFlags: 0

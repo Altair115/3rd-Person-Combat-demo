@@ -46,9 +46,12 @@ namespace StateMachines.Enemy.States
         
         private void MoveToPlayer(float deltaTime)
         {
-            _stateMachine.Agent.destination = _stateMachine.Player.transform.position;
-           Move(_stateMachine.Agent.desiredVelocity.normalized * _stateMachine.MovementSpeed, deltaTime);
-           _stateMachine.Agent.velocity = _stateMachine.Controller.velocity;
+            if (_stateMachine.Agent.isOnNavMesh)
+            {
+                _stateMachine.Agent.destination = _stateMachine.Player.transform.position;
+                Move(_stateMachine.Agent.desiredVelocity.normalized * _stateMachine.MovementSpeed, deltaTime);
+            }
+            _stateMachine.Agent.velocity = _stateMachine.Controller.velocity;
         }
 
         private bool IsInAttackRange()
