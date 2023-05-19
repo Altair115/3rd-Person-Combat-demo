@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponHandler : MonoBehaviour
 {
     [SerializeField] private GameObject blade;
-
+    
     /// <summary>
     /// Animator event
     /// </summary>
@@ -20,12 +20,12 @@ public class WeaponHandler : MonoBehaviour
     {
         blade.SetActive(false);
     }
-
+    
     /// <summary>
     /// Animator Event
     /// </summary>
     private void Hit()
     {
-        blade.SetActive(true);
+        
     }
 }

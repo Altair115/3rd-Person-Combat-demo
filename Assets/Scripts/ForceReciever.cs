@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ForceReciever : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private float drag = 0.3f;
 
     private Vector3 _dampingVelocity;
@@ -25,10 +27,22 @@ public class ForceReciever : MonoBehaviour
         }
 
         _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, drag);
+
+        if (agent != null)
+        {
+            if (_impact == Vector3.zero)
+            {
+                agent.enabled = true;
+            }
+        }
     }
 
     public void AddForce(Vector3 force)
     {
         _impact += force;
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
     }
 }

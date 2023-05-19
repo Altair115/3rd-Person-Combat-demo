@@ -204,27 +204,30 @@ MonoBehaviour:
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDampingValue>k__BackingField: 10
   <Attacks>k__BackingField:
-  - <AnimationName>k__BackingField: Sword-Attack-R1
+  - <AnimationName>k__BackingField: Attack 1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
     <ComboAttackTime>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 7.5
     <DamageAmount>k__BackingField: 10
-  - <AnimationName>k__BackingField: Sword-Attack-R2
+    <Knockback>k__BackingField: 10
+  - <AnimationName>k__BackingField: Attack 2
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 7.5
     <DamageAmount>k__BackingField: 15
-  - <AnimationName>k__BackingField: Sword-Attack-R3
+    <Knockback>k__BackingField: 15
+  - <AnimationName>k__BackingField: Attack 3
     <TransitionDuration>k__BackingField: 0.2
-    <ComboStateIndex>k__BackingField: 3
-    <ComboAttackTime>k__BackingField: 0
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0.3
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 10
     <DamageAmount>k__BackingField: 20
+    <Knockback>k__BackingField: 20
 --- !u!114 &5652892360571016348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4331251235848576877}
+  agent: {fileID: 0}
   drag: 0.1
 --- !u!114 &2821513330785249488
 MonoBehaviour:
@@ -384,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.097602844
+      value: 0.10141754
       objectReference: {fileID: 0}
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
@@ -394,12 +398,12 @@ PrefabInstance:
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.032679666
+      value: 0.031638294
       objectReference: {fileID: 0}
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.0016098022
+      value: -0.0028593538
       objectReference: {fileID: 0}
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
@@ -409,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.000732122
+      value: 0.0005206848
       objectReference: {fileID: 0}
     - target: {fileID: 4272769275778326371, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
@@ -424,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 4298786876635530377, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4304852822404780919, guid: 5452d148de9b6c340a4cb5657aa77b59,
         type: 3}
@@ -560,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 465914, guid: f61def225eac3e247985f6679965a655, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.46
+      value: 11.89
       objectReference: {fileID: 0}
     - target: {fileID: 465914, guid: f61def225eac3e247985f6679965a655, type: 3}
       propertyPath: m_LocalPosition.y
@@ -568,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 465914, guid: f61def225eac3e247985f6679965a655, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.12
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 465914, guid: f61def225eac3e247985f6679965a655, type: 3}
       propertyPath: m_LocalRotation.w
