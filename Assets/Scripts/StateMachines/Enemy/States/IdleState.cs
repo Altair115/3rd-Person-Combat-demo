@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace StateMachines.Enemy.States
 {
@@ -21,6 +22,13 @@ namespace StateMachines.Enemy.States
 
         public override void Tick(float deltaTime)
         {
+            Move(deltaTime);
+            if (IsInChaseRange())
+            {
+                Debug.Log("In Range");
+                //Transition to chase state
+                return;
+            }
             _stateMachine.Animator.SetFloat(SpeedHash, 0, AnimatorDampTime, deltaTime);
         }
 
