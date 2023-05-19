@@ -1,6 +1,6 @@
-using System;
 using StateMachines.Enemy.States;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StateMachines.Enemy
 {
@@ -9,6 +9,8 @@ namespace StateMachines.Enemy
         [field: SerializeField]public Animator Animator { get; private set; }
         [field: SerializeField]public CharacterController Controller { get; private set; }
         [field: SerializeField]public ForceReciever ForceReciever { get; private set; }
+        [field: SerializeField]public NavMeshAgent Agent { get; private set; }
+        [field: SerializeField]public float MovementSpeed { get; private set; }
         [field: SerializeField]public float PlayerChasingRange { get; private set; }
         
         public GameObject Player { get; private set; }
@@ -16,7 +18,8 @@ namespace StateMachines.Enemy
         private void Start()
         {
             Player = GameObject.FindGameObjectWithTag("Player");
-            
+            Agent.updatePosition = false;
+            Agent.updateRotation = false;
             SwitchState(new IdleState(this));
         }
 

@@ -25,8 +25,7 @@ namespace StateMachines.Enemy.States
             Move(deltaTime);
             if (IsInChaseRange())
             {
-                Debug.Log("In Range");
-                //Transition to chase state
+                _stateMachine.SwitchState(new ChasingState(_stateMachine));
                 return;
             }
             _stateMachine.Animator.SetFloat(SpeedHash, 0, AnimatorDampTime, deltaTime);
