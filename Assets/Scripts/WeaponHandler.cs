@@ -20,4 +20,12 @@ public class WeaponHandler : MonoBehaviour
     {
         blade.SetActive(false);
     }
+
+    /// <summary>
+    /// Animator Event
+    /// </summary>
+    private void Hit()
+    {
+        blade.SetActive(true);
+    }
 }

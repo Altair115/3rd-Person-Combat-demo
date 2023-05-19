@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,18 +8,18 @@ namespace Combat
         [SerializeField] private Collider myCollider;
 
         private int _damage;
-        private List<Collider> alreadyCollidedWith = new List<Collider>();
+        private List<Collider> _alreadyCollidedWith = new List<Collider>();
 
         private void OnEnable()
         {
-            alreadyCollidedWith.Clear();
+            _alreadyCollidedWith.Clear();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if(other == myCollider){return;}
-            if(alreadyCollidedWith.Contains(other)){return;}
-            alreadyCollidedWith.Add(other);
+            if(_alreadyCollidedWith.Contains(other)){return;}
+            _alreadyCollidedWith.Add(other);
 
             if (other.TryGetComponent<Health>(out Health health))
             {
