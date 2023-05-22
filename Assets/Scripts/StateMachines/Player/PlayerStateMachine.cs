@@ -29,16 +29,23 @@ namespace StateMachines.Player
         private void OnEnable()
         {
             Health.OnTakeDamage += HandleOnTakeDamage;
+            Health.OnDie += HandleOnDie;
         }
         
         private void OnDisable()
         {
             Health.OnTakeDamage -= HandleOnTakeDamage;
+            Health.OnDie -= HandleOnDie;
         }
         
         private void HandleOnTakeDamage()
         {
             SwitchState(new PlayerImpactState(this));
+        }
+        
+        private void HandleOnDie()
+        {
+            SwitchState(new PlayerDeadState(this));
         }
 
         /// <summary>

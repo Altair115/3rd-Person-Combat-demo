@@ -213,7 +213,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 3.75
     <DamageAmount>k__BackingField: 10
-    <Knockback>k__BackingField: 10
+    <Knockback>k__BackingField: 5
   - <AnimationName>k__BackingField: Attack 2
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: 2
@@ -221,7 +221,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 3.75
     <DamageAmount>k__BackingField: 15
-    <Knockback>k__BackingField: 15
+    <Knockback>k__BackingField: 10
   - <AnimationName>k__BackingField: Attack 3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -229,7 +229,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 5
     <DamageAmount>k__BackingField: 20
-    <Knockback>k__BackingField: 20
+    <Knockback>k__BackingField: 15
 --- !u!114 &5652892360571016348
 MonoBehaviour:
   m_ObjectHideFlags: 0

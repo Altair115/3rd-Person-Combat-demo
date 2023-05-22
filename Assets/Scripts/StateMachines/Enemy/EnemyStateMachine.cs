@@ -1,4 +1,5 @@
 using Combat;
+using Combat.Targeting;
 using StateMachines.Enemy.States;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,6 +14,7 @@ namespace StateMachines.Enemy
         [field: SerializeField]public NavMeshAgent Agent { get; private set; }
         [field: SerializeField]public WeaponDamage Weapon { get; private set; }
         [field: SerializeField]public Health Health { get; private set; }
+        [field: SerializeField]public Target Target { get; private set; }
         [field: SerializeField]public float MovementSpeed { get; private set; }
         [field: SerializeField]public float PlayerChasingRange { get; private set; }
         [field: SerializeField]public float AttackRange { get; private set; }
@@ -32,16 +34,23 @@ namespace StateMachines.Enemy
         private void OnEnable()
         {
             Health.OnTakeDamage += HandleOnTakeDamage;
+            Health.OnDie += HandleOnDie;
         }
         
         private void OnDisable()
         {
             Health.OnTakeDamage -= HandleOnTakeDamage;
+            Health.OnDie -= HandleOnDie;
         }
         
         private void HandleOnTakeDamage()
         {
             SwitchState(new ImpactState(this));
+        }
+        
+        private void HandleOnDie()
+        {
+            SwitchState(new DeadState(this));
         }
 
         /// <summary>
