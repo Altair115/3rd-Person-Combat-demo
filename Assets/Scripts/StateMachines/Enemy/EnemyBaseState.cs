@@ -33,6 +33,10 @@ namespace StateMachines.Enemy
 
         protected bool IsInChaseRange()
         {
+            if (_stateMachine.Player.IsDead)
+            {
+                return false;
+            }
             float playerDistanceSqr = (_stateMachine.Player.transform.position - _stateMachine.transform.position).sqrMagnitude;
             return playerDistanceSqr <= _stateMachine.PlayerChasingRange * _stateMachine.PlayerChasingRange;
         }

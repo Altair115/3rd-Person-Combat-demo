@@ -122,8 +122,8 @@ MonoBehaviour:
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0.5
+    m_Style: 2
+    m_Time: 0.25
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -212,11 +212,15 @@ MonoBehaviour:
     m_ParentHash: -1270913310
   - m_Hash: 1478146620
     m_ParentHash: -1270913310
-  - m_Hash: -637412921
+  - m_Hash: -274583130
     m_ParentHash: 756556552
-  - m_Hash: 1124632701
+  - m_Hash: 1990942748
     m_ParentHash: 756556552
-  - m_Hash: 873445611
+  - m_Hash: 28070026
+    m_ParentHash: 756556552
+  - m_Hash: -1063883918
+    m_ParentHash: 756556552
+  - m_Hash: -946407516
     m_ParentHash: 756556552
 --- !u!1 &2816334208898695158
 GameObject:
@@ -242,7 +246,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816334208898695158}
-  m_LocalRotation: {x: 0.0026322228, y: -0.0000000012098195, z: 3.1845251e-12, w: 0.99999654}
+  m_LocalRotation: {x: 0.3473524, y: 0.000000008882499, z: -0.0000000032902232, w: 0.93773466}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -356,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.5, z: -3}
+  m_FollowOffset: {x: 0, y: 2, z: -1.75}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -448,7 +452,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830692830054204105}
-  m_LocalRotation: {x: 0.020773184, y: 0.0000000010751667, z: -2.2339457e-11, w: 0.99978423}
+  m_LocalRotation: {x: 0.3643071, y: -0.000000016023945, z: 0.0000000062684093, w: 0.9312789}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -562,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.5, z: -3}
+  m_FollowOffset: {x: 0, y: 2, z: -1.75}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -689,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.5, z: -3}
+  m_FollowOffset: {x: 0, y: 2, z: -1.75}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -781,8 +785,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6132681768181190990}
-  m_LocalRotation: {x: 0.19995944, y: -0, z: -0, w: 0.9798042}
-  m_LocalPosition: {x: 2.5191422, y: 0.36906338, z: -13.071022}
+  m_LocalRotation: {x: 0.137209, y: 0.000000017043646, z: -0.0000000023608704, w: 0.9905421}
+  m_LocalPosition: {x: 2.5191422, y: 0.36906362, z: -15.071022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -822,8 +826,8 @@ MonoBehaviour:
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -856,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161294468703931836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5191422, y: -0.6309366, z: -12.071022}
+  m_LocalPosition: {x: 2.5191422, y: 0.8690636, z: -10.821022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -899,14 +903,14 @@ MonoBehaviour:
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.5
+    Value: 1
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -961,9 +965,9 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 2
-    m_Radius: 1.75
+    m_Radius: 5
   - m_Height: 0.5
-    m_Radius: 3
+    m_Radius: 6
   - m_Height: -0.75
     m_Radius: 1.3
   m_LegacyHeadingBias: 3.4028235e+38
@@ -1079,8 +1083,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0.1
   m_ScreenX: 0.5
   m_ScreenY: 0.45
   m_DeadZoneWidth: 0
@@ -1115,10 +1119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.5, z: -4}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_FollowOffset: {x: 0, y: 1.5, z: -6}
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -1181,7 +1185,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9027015549787733211}
-  m_LocalRotation: {x: -0.030671349, y: -0.000000017231839, z: -5.2877247e-10, w: 0.99952954}
+  m_LocalRotation: {x: 0.31854606, y: -0.000000016310056, z: 0.0000000054810254, w: 0.9479074}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1259,6 +1263,31 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+    - target: {fileID: 5272282903499791410, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316886088386136024, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.8946842
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316886088386136024, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0028593491
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316886088386136024, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.26765788
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316886088386136024, guid: 76db19276b5266349991dee0218bc680,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.00052068307
+      objectReference: {fileID: 0}
     - target: {fileID: 7825371044200468612, guid: 76db19276b5266349991dee0218bc680,
         type: 3}
       propertyPath: m_RootOrder
