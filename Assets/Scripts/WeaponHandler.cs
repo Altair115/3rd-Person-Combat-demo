@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponHandler : MonoBehaviour
@@ -12,7 +10,6 @@ public class WeaponHandler : MonoBehaviour
     private void EnableWeapon()
     {
         blade.SetActive(true);
-        Debug.Log("ON");
     }
     /// <summary>
     /// Animator event
@@ -20,7 +17,6 @@ public class WeaponHandler : MonoBehaviour
     private void DisableWeapon()
     {
         blade.SetActive(false);
-        Debug.Log("OFF");
     }
     
     /// <summary>

@@ -14,7 +14,6 @@ namespace Combat
         private void OnEnable()
         {
             _alreadyCollidedWith.Clear();
-            Debug.Log("ON");
         }
 
         private void OnTriggerEnter(Collider other)

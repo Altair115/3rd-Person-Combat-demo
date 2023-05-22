@@ -8,7 +8,7 @@
 
         public override void Enter()
         {
-            //toggle Ragdoll
+            _stateMachine.Ragdoll.ToggleRagdoll(true);
             _stateMachine.Weapon.gameObject.SetActive(false);
         }
 

@@ -1485,17 +1485,17 @@ PrefabInstance:
     - target: {fileID: 8908490153721608651, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.032935016
+      value: -0.032935012
       objectReference: {fileID: 0}
     - target: {fileID: 8908490153721608651, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: -0.0000000021496311
       objectReference: {fileID: 0}
     - target: {fileID: 8908490153721608651, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -7.083655e-11
       objectReference: {fileID: 0}
     - target: {fileID: 8920682283185842806, guid: 095ba62b7fa4d0442b176c2160263540,
         type: 3}
@@ -1540,11 +1540,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 912731076332913916, guid: c4a7611b3727a99489e3196b4ee4ba21,
-        type: 3}
-      propertyPath: <PlayerChasingRange>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3789652608457438493, guid: c4a7611b3727a99489e3196b4ee4ba21,
         type: 3}
       propertyPath: m_RootOrder
