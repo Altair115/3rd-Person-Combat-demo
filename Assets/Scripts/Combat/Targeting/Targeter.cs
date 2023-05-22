@@ -61,7 +61,7 @@ namespace Combat.Targeting
             {
                 Vector2 viewPosition = _mainCamera.WorldToViewportPoint(target.transform.position);
 
-                if (viewPosition.x < 0 || viewPosition.x > 1 || viewPosition.y < 0 || viewPosition.y > 1)
+                if (!target.GetComponentInChildren<Renderer>().isVisible)
                 {
                     continue;
                 }

@@ -15,7 +15,7 @@ namespace StateMachines.Player.States
 
         public override void Enter()
         {
-            _stateMachine.Weapon.SetAttack(_attack.DamageAmount);
+            _stateMachine.Weapon.SetAttack(_attack.DamageAmount, _attack.Knockback);
             _stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
         }
 
@@ -24,7 +24,7 @@ namespace StateMachines.Player.States
             Move(deltaTime);
             FaceTarget();
             
-            float normalizedTime = GetNormalizedTime();
+            float normalizedTime = GetNormalizedTime(_stateMachine.Animator);
 
             if (normalizedTime >= _previousFrameTime && normalizedTime < 1f)
             {
@@ -69,25 +69,6 @@ namespace StateMachines.Player.States
             if(_alreadyAppliedForce){return;}
             _stateMachine.ForceReciever.AddForce(_stateMachine.transform.forward * _attack.Force);
             _alreadyAppliedForce = true;
-        }
-
-        private float GetNormalizedTime()
-        {
-            AnimatorStateInfo currentInfo = _stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-            AnimatorStateInfo nextInfo = _stateMachine.Animator.GetNextAnimatorStateInfo(0);
-
-            if (_stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-            {
-                return nextInfo.normalizedTime;
-            }
-            else if(!_stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
-            {
-                return currentInfo.normalizedTime;
-            }
-            else
-            {
-                return 0;
-            }
         }
     }
 }

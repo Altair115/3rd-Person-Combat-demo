@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,28 +8,36 @@ namespace Combat
         [SerializeField] private Collider myCollider;
 
         private int _damage;
-        private List<Collider> alreadyCollidedWith = new List<Collider>();
+        private float _knockback;
+        private List<Collider> _alreadyCollidedWith = new List<Collider>();
 
         private void OnEnable()
         {
-            alreadyCollidedWith.Clear();
+            _alreadyCollidedWith.Clear();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if(other == myCollider){return;}
-            if(alreadyCollidedWith.Contains(other)){return;}
-            alreadyCollidedWith.Add(other);
+            if(_alreadyCollidedWith.Contains(other)){return;}
+            _alreadyCollidedWith.Add(other);
 
             if (other.TryGetComponent<Health>(out Health health))
             {
                 health.DealDamage(_damage);
             }
+
+            if (other.TryGetComponent<ForceReciever>(out ForceReciever forceReciever))
+            {
+                Vector3 direction = (other.transform.position - myCollider.transform.position).normalized;
+                forceReciever.AddForce(direction * _knockback);
+            }
         }
 
-        public void SetAttack(int damage)
+        public void SetAttack(int damage, float knockback)
         {
             _damage = damage;
+            _knockback = knockback;
         }
     }
 }

@@ -27,6 +27,12 @@ namespace StateMachines.Player.States
                 _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, 0));
                 return;
             }
+
+            if (_stateMachine.InputReader.IsBlocking)
+            {
+                _stateMachine.SwitchState(new PlayerBlockingState(_stateMachine));
+                return;
+            }
             
             if (_stateMachine.Targeter.CurrentTarget == null)
             {
