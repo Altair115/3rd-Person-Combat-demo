@@ -11,7 +11,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public bool IsBlocking { get; private set; }
 
     public event Action OnJumpEvent;
-    public event Action OnDodgeEvent;
+    public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelEvent;
     
@@ -36,7 +36,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnDodge(InputAction.CallbackContext context)
     {
         if(!context.performed) {return;}
-        OnDodgeEvent?.Invoke();
+        DodgeEvent?.Invoke();
     }
 
     public void OnMove(InputAction.CallbackContext context)
