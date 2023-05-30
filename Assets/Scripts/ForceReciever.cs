@@ -51,4 +51,10 @@ public class ForceReciever : MonoBehaviour
     {
         _verticalVelocity += jumpForce;
     }
+
+    public void Reset()
+    {
+        _impact = Vector3.zero;
+        _verticalVelocity = 0f;
+    }
 }

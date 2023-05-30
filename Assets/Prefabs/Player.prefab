@@ -106,7 +106,8 @@ GameObject:
   - component: {fileID: 214181460800051065}
   - component: {fileID: 1760889353416296243}
   - component: {fileID: 5290759503752382881}
-  m_Layer: 6
+  - component: {fileID: 7061110593866262515}
+  m_Layer: 8
   m_Name: Ledge detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +177,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7061110593866262515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555160765192607547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a6dfe047c53c04d91c6484d24ef68f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908480342214112822
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +205,6 @@ GameObject:
   - component: {fileID: 3653111941062496989}
   - component: {fileID: 2821513330785249488}
   - component: {fileID: 2302345002840444489}
-  - component: {fileID: 85554133874613896}
   - component: {fileID: 1077930693647973591}
   m_Layer: 6
   m_Name: Player
@@ -287,12 +299,13 @@ MonoBehaviour:
   <Weapon>k__BackingField: {fileID: 3877504659199207439}
   <Health>k__BackingField: {fileID: 2302345002840444489}
   <Ragdoll>k__BackingField: {fileID: 1077930693647973591}
+  <LedgeDetector>k__BackingField: {fileID: 7061110593866262515}
   <FreeLookMovementSpeed>k__BackingField: 5
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDampingValue>k__BackingField: 10
   <DodgeDuration>k__BackingField: 0.6
   <DodgeDistance>k__BackingField: 3
-  <JumpForce>k__BackingField: 3
+  <JumpForce>k__BackingField: 5
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack 1
     <TransitionDuration>k__BackingField: 0.1
@@ -371,33 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
---- !u!54 &85554133874613896
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908480342214112822}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1077930693647973591
 MonoBehaviour:
   m_ObjectHideFlags: 0
