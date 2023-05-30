@@ -36,9 +36,10 @@ namespace StateMachines.Player.States
             _stateMachine.LedgeDetector.OnLedgdeDetect -= HandleLedgeDetect;
         }
 
-        private void HandleLedgeDetect(Vector3 ledgeForward)
+        private void HandleLedgeDetect(Vector3 ledgeForward, Vector3 closestPoint)
         {
-            _stateMachine.SwitchState(new PlayerHangingState(_stateMachine, ledgeForward));
+            _stateMachine.SwitchState(new PlayerHangingState(_stateMachine, ledgeForward, closestPoint));
+            
         }
     }
 }

@@ -24,7 +24,7 @@ namespace StateMachines.Player.States
             Move(deltaTime);
             FaceTarget();
             
-            float normalizedTime = GetNormalizedTime(_stateMachine.Animator);
+            float normalizedTime = GetNormalizedTime(_stateMachine.Animator, "Attack");
 
             if (normalizedTime >= _previousFrameTime && normalizedTime < 1f)
             {

@@ -7,15 +7,22 @@ namespace StateMachines.Player.States
         private readonly int HangingHash = Animator.StringToHash("Hanging");
         private const float _animatorCrossFadeDuration = 0.1f;
         private Vector3 _ledgeForward;
+        private Vector3 _closestPoint;
         
-        public PlayerHangingState(PlayerStateMachine stateMachine, Vector3 ledgeForward) : base(stateMachine)
+        public PlayerHangingState(PlayerStateMachine stateMachine, Vector3 ledgeForward, Vector3 closestPoint) : base(stateMachine)
         {
             _ledgeForward = ledgeForward;
+            _closestPoint = closestPoint;
         }
 
         public override void Enter()
         {
             _stateMachine.transform.rotation = Quaternion.LookRotation(_ledgeForward,Vector3.up);
+            _stateMachine.Controller.enabled = false;
+            _stateMachine.transform.position = _closestPoint -
+                                               (_stateMachine.LedgeDetector.transform.position -
+                                                _stateMachine.transform.position);
+            _stateMachine.Controller.enabled = true;
             _stateMachine.Animator.CrossFadeInFixedTime(HangingHash, _animatorCrossFadeDuration);
         }
 

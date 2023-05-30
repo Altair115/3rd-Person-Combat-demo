@@ -19,7 +19,7 @@ namespace StateMachines.Player.States
 
         public override void Tick(float deltaTime)
         {
-            if(_stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f){return;}
+            if(GetNormalizedTime(_stateMachine.Animator, "Climbing") < 1f){return;}
 
             _stateMachine.Controller.enabled = false;
             _stateMachine.transform.Translate(_offset, Space.Self);
