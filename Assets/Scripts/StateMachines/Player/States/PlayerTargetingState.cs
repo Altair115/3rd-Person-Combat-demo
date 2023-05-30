@@ -5,9 +5,6 @@ namespace StateMachines.Player.States
 {
     public class PlayerTargetingState : PlayerBaseState
     {
-        private Vector2 _dodgingDirectionInput;
-        private float _remaningDodgeTime;
-        
         private readonly int targetingBlendTreedHash = Animator.StringToHash("TargetingBlendTree");
         private readonly int targetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
         private readonly int targetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
@@ -71,11 +68,11 @@ namespace StateMachines.Player.States
 
         private void OnDodge()
         {
-            if(Time.time - _stateMachine.PreviousDodgeTime < _stateMachine.DodgeCooldown){return;}
-            
-            _stateMachine.setDodgeTime(Time.time);
-            _dodgingDirectionInput = _stateMachine.InputReader.MovementValue;
-            _remaningDodgeTime = _stateMachine.DodgeDuration;
+            if (_stateMachine.InputReader.MovementValue == Vector2.zero)
+            {
+                return;
+            }
+            _stateMachine.SwitchState(new PlayerDodgingState(_stateMachine, _stateMachine.InputReader.MovementValue));
         }
 
         private void OnJump()
@@ -86,21 +83,9 @@ namespace StateMachines.Player.States
         private Vector3 CalculateMovement(float deltaTime)
         {
             Vector3 movement = new Vector3();
-
-            if (_remaningDodgeTime > 0f)
-            {
-                movement += _stateMachine.transform.right * (_dodgingDirectionInput.x * _stateMachine.DodgeDistance) /
-                            _stateMachine.DodgeDuration;
-                movement += _stateMachine.transform.forward * (_dodgingDirectionInput.y * _stateMachine.DodgeDistance) /
-                            _stateMachine.DodgeDuration;
-
-                _remaningDodgeTime = Mathf.Max(_remaningDodgeTime - deltaTime, 0f);
-            }
-            else
-            {
-                movement += _stateMachine.transform.right * _stateMachine.InputReader.MovementValue.x;
-                movement += _stateMachine.transform.forward * _stateMachine.InputReader.MovementValue.y;
-            }
+            
+            movement += _stateMachine.transform.right * _stateMachine.InputReader.MovementValue.x;
+            movement += _stateMachine.transform.forward * _stateMachine.InputReader.MovementValue.y;
 
             return movement;
         }
