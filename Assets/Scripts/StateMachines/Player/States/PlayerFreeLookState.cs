@@ -6,20 +6,35 @@ namespace StateMachines.Player.States
 {
     public class PlayerFreeLookState : PlayerBaseState
     {
+        private bool _shouldFade;
+        
         private readonly int freeLookBlendTreedHash = Animator.StringToHash("FreeLookBlendTree");
         private readonly int freeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
         
         private const float _animatorDampTime = 0.1f;
         private const float _animatorCrossFadeDuration = 0.1f;
         
-        public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
+        public PlayerFreeLookState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine)
         {
+            _shouldFade = shouldFade;
         }
 
         public override void Enter()
         {
             _stateMachine.InputReader.TargetEvent += OnTarget;
-            _stateMachine.Animator.CrossFadeInFixedTime(freeLookBlendTreedHash, _animatorCrossFadeDuration);
+            _stateMachine.InputReader.OnJumpEvent += OnJump;
+            
+            _stateMachine.Animator.SetFloat(freeLookSpeedHash, 0);
+            
+            if (_shouldFade)
+            {
+                _stateMachine.Animator.CrossFadeInFixedTime(freeLookBlendTreedHash, _animatorCrossFadeDuration);
+            }
+            else
+            {
+                _stateMachine.Animator.Play(freeLookBlendTreedHash);
+            }
+            
         }
         
         public override void Tick(float deltaTime)
@@ -46,6 +61,7 @@ namespace StateMachines.Player.States
         public override void Exit()
         {
             _stateMachine.InputReader.TargetEvent -= OnTarget;
+            _stateMachine.InputReader.OnJumpEvent -= OnJump;
         }
         
         private void OnTarget()
@@ -53,6 +69,11 @@ namespace StateMachines.Player.States
             if(!_stateMachine.Targeter.SelectTarget()){return;}
             
             _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+        }
+        
+        private void OnJump()
+        {
+            _stateMachine.SwitchState(new PlayerJumpingState(_stateMachine));
         }
 
 

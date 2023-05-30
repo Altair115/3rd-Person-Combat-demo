@@ -11,10 +11,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public bool IsBlocking { get; private set; }
 
     public event Action OnJumpEvent;
-    public event Action OnDodgeEvent;
+    public event Action DodgeEvent;
     public event Action TargetEvent;
-    public event Action CancelEvent;
-    
+
     private void Start()
     {
         _controls = new Controls();
@@ -36,7 +35,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnDodge(InputAction.CallbackContext context)
     {
         if(!context.performed) {return;}
-        OnDodgeEvent?.Invoke();
+        DodgeEvent?.Invoke();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -54,13 +53,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if(!context.performed) {return;}
         TargetEvent?.Invoke();
     }
-
-    public void OnCancel(InputAction.CallbackContext context)
-    {
-        if(!context.performed) {return;}
-        CancelEvent?.Invoke();
-    }
-
+    
     public void OnAttack(InputAction.CallbackContext context)
     {
         IsAttacking = context.performed;

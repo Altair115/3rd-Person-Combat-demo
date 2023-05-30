@@ -20,7 +20,7 @@ namespace StateMachines.Enemy.States
         public override void Tick(float deltaTime)
         {
             FacePlayer();
-            if (GetNormalizedTime(_stateMachine.Animator) >= 1)
+            if (GetNormalizedTime(_stateMachine.Animator, "Attack") >= 1)
             {
                 _stateMachine.SwitchState(new ChasingState(_stateMachine));
             }
