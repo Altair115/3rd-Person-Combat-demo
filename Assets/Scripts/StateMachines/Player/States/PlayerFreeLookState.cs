@@ -19,6 +19,7 @@ namespace StateMachines.Player.States
         public override void Enter()
         {
             _stateMachine.InputReader.TargetEvent += OnTarget;
+            _stateMachine.InputReader.OnJumpEvent += OnJump;
             _stateMachine.Animator.CrossFadeInFixedTime(freeLookBlendTreedHash, _animatorCrossFadeDuration);
         }
         
@@ -46,6 +47,7 @@ namespace StateMachines.Player.States
         public override void Exit()
         {
             _stateMachine.InputReader.TargetEvent -= OnTarget;
+            _stateMachine.InputReader.OnJumpEvent -= OnJump;
         }
         
         private void OnTarget()
@@ -53,6 +55,11 @@ namespace StateMachines.Player.States
             if(!_stateMachine.Targeter.SelectTarget()){return;}
             
             _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+        }
+        
+        private void OnJump()
+        {
+            _stateMachine.SwitchState(new PlayerJumpingState(_stateMachine));
         }
 
 

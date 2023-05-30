@@ -21,6 +21,8 @@ namespace StateMachines.Player
         [field: SerializeField]public float DodgeDuration { get; private set; }
         [field: SerializeField]public float DodgeDistance { get; private set; }
         [field: SerializeField]public float DodgeCooldown { get; private set; }
+        [field: SerializeField]public float JumpForce { get; private set; }
+        //[field: SerializeField]public float JumpCooldown { get; private set; }
         [field: SerializeField]public Attack[] Attacks { get; private set; }
 
 
