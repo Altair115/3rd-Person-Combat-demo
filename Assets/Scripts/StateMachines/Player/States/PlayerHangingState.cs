@@ -21,11 +21,16 @@ namespace StateMachines.Player.States
 
         public override void Tick(float deltaTime)
         {
-            if (_stateMachine.InputReader.MovementValue.y < 0f)
+            switch (_stateMachine.InputReader.MovementValue.y)
             {
-                _stateMachine.Controller.Move(Vector3.zero);
-                _stateMachine.ForceReciever.Reset();
-                _stateMachine.SwitchState(new PlayerFallingState(_stateMachine));
+                case > 0f:
+                    _stateMachine.SwitchState(new PlayerPullUpState(_stateMachine));
+                    break;
+                case < 0f:
+                    _stateMachine.Controller.Move(Vector3.zero);
+                    _stateMachine.ForceReciever.Reset();
+                    _stateMachine.SwitchState(new PlayerFallingState(_stateMachine));
+                    break;
             }
         }
 
